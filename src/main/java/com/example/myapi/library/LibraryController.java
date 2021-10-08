@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LibraryController {
-    Library newLibrary = new Library(40, 20);
+    Library newLibrary = new Library(2, 4);
     @GetMapping("/books")
     public Library getNewLibrary() {
         return newLibrary;

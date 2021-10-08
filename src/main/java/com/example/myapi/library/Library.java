@@ -1,6 +1,9 @@
 package com.example.myapi.library;
+import java.util.Scanner;
 
 public class Library {
+
+    final private Scanner input = new Scanner(System.in);
 
     private int totalContainers;
     private int booksForContainer;
@@ -15,7 +18,9 @@ public class Library {
         int count = 0;
         for (int i = 0; i < this.totalContainers; i++) {
             for (int j = 0; j < this.booksForContainer; j++) {
-                this.availableBooks[count] = new Book(1,"name", "author", "genre", 1, 2, i+j);
+                System.out.print("ID: ");
+                int id = input.nextInt();
+                this.availableBooks[count] = new Book(id,"name", "author", "genre", 1, 2, i+j);
                 count++;
             }
         }
