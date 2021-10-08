@@ -3,8 +3,6 @@ import java.util.Scanner;
 
 public class Library {
 
-    final private Scanner input = new Scanner(System.in);
-
     private int totalContainers;
     private int booksForContainer;
     private Book[] availableBooks;
@@ -15,12 +13,15 @@ public class Library {
         this.totalContainers = totalContainers;
         this.booksForContainer = booksForContainer;
         this.availableBooks = new Book[this.totalContainers * this.booksForContainer];
+        Scanner input = new Scanner(System.in);
         int count = 0;
         for (int i = 0; i < this.totalContainers; i++) {
             for (int j = 0; j < this.booksForContainer; j++) {
-                System.out.print("ID: ");
-                int id = input.nextInt();
-                this.availableBooks[count] = new Book(id,"name", "author", "genre", 1, 2, i+j);
+                System.out.println("ID: ");
+                int id = Integer.parseInt(input.nextLine());
+                System.out.println("Book Name: ");
+                String bookName = input.nextLine();
+                this.availableBooks[count] = new Book(id,bookName, "author", "genre", 1, 2, i+j);
                 count++;
             }
         }
